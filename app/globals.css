@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --shadow-header: 0 0 12px rgba(24, 44, 194, 0.05);
+  --shadow-popup: 0 1px 12px 2px rgba(36, 36, 36, 0.07);
+  --font-wix-display: var(--font-wix-display);
+  --font-wix-text: var(--font-wix-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-quaternary-400: #FF2323;
+
+  --color-secondary-500: #9B16C9;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-marquee {
+  animation: scroll 30s linear infinite;
+}
+
+.bg-radial-gradient {
+  position: relative;
+  background-color: #262626;
+  overflow: hidden;
+}
+
+.bg-radial-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(238, 185, 2, 1) 0%, transparent 30%),
+    radial-gradient(circle at 30% 20%, rgba(242, 143, 210, 1) 0%, transparent 30%),
+    radial-gradient(circle at 60% 90%, rgba(98, 180, 255, 1) 0%, transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(226, 83, 119, 1) 0%, transparent 30%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(80px);
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-radial-gradient-long-card {
+  background: transparent;
+  transition: background-image 1s ease;
+}
+
+.bg-radial-gradient-long-card:hover {
+  background: radial-gradient(
+    circle,
+    rgba(238, 185, 2, 0.1) 0%,
+    rgba(242, 143, 210, 0.1) 50%,
+    rgba(98, 180, 255, 0.1) 100%
+  );
 }
