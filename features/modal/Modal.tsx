@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import useStore from "@/lib/store/modalStore";
 import InputField from "../../shared/ui/molecules/InputField";
 import Button from "../../shared/ui/atoms/Button";
-import EyeIcon from "@/shared/ui/atoms/EyeIcon";
+import EyeIcon from "@/shared/ui/svg/EyeIcon";
 
 export default function Modal () {
   const { isShow } = useStore((state) => state);
