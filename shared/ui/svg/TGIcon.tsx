@@ -1,4 +1,6 @@
-export default function TGIcon() {
+import { memo } from "react";
+
+function TGIconComponent () {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,3 +25,6 @@ export default function TGIcon() {
     </svg>
   );
 }
+
+const TGIcon = memo(TGIconComponent);
+export default TGIcon;

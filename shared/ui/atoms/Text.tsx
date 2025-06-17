@@ -1,14 +1,17 @@
-import { ReactNode } from "react"
+import { memo, ReactNode } from "react"
 
 type Props = {
   children: ReactNode;
   className?: string;
 }
 
-export default function Text ({ children, className }: Props) {
+function TextComponent ({ children, className }: Props) {
   return (
-    <p className={`font-medium ${className}`}>
+    <p className={`${className}`}>
       { children }
     </p>
   )
 }
+
+const Text = memo(TextComponent);
+export default Text;

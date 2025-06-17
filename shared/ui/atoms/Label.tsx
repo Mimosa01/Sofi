@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { memo, ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
@@ -6,7 +6,7 @@ type Props = {
   className?: string;
 }
 
-export default function Label ({ children, htmlFor, className }: Props) {
+function LabelComponent ({ children, htmlFor, className }: Props) {
   return (
     <label htmlFor={htmlFor} className={`
       flex flex-col gap-2
@@ -16,3 +16,6 @@ export default function Label ({ children, htmlFor, className }: Props) {
     </label>
   )
 }
+
+const Label = memo(LabelComponent);
+export default Label;

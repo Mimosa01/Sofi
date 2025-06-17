@@ -2,8 +2,9 @@
 
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { MOBILE_WIDTH_QUERY } from "@/lib/constants/contants";
+import { memo } from "react";
 
-export default function LogoIcon () {
+function LogoIconComponent () {
   const isMobile = useMediaQuery(MOBILE_WIDTH_QUERY);
   return (
     isMobile
@@ -28,3 +29,6 @@ export default function LogoIcon () {
       </svg>
   )
 }
+
+const LogoIcon = memo(LogoIconComponent);
+export default LogoIcon;

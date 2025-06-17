@@ -1,6 +1,7 @@
 import { IconProps } from "@/types/icons"
+import { memo } from "react"
 
-export default function MessageIcon ({ width, height }: IconProps) {
+function MessageIconComponent ({ width, height }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 20 20" fill="none">
       <path d="M6.66699 7.5H13.3337" stroke="#333333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -9,3 +10,6 @@ export default function MessageIcon ({ width, height }: IconProps) {
     </svg>
   )
 }
+
+const MessageIcon = memo(MessageIconComponent);
+export default MessageIcon;

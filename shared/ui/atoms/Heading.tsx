@@ -1,4 +1,4 @@
-import { JSX, ReactNode } from "react"
+import { JSX, memo, ReactNode } from "react"
 
 type Props = {
   children: ReactNode;
@@ -6,8 +6,11 @@ type Props = {
   className?: string;
 }
 
-export default function Heading ({ children, level, className }:Props) {
+function HeadingComponent ({ children, level, className }:Props) {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
-  return <Tag className={`font-bold ${className}`}>{children}</Tag>;
+  return <Tag className={`${className}`}>{children}</Tag>;
 }
+
+const Heading = memo(HeadingComponent);
+export default Heading;

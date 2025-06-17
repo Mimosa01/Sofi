@@ -1,6 +1,7 @@
 import { IconProps } from "@/types/icons"
+import { memo } from "react"
 
-export default function StackIcon ({ width, height }: IconProps) {
+function StackIconComponent ({ width, height }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 20 20" fill="none">
       <path d="M9.99967 3.33325L3.33301 6.66659L9.99967 9.99992L16.6663 6.66659L9.99967 3.33325Z" stroke="#333333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -9,3 +10,6 @@ export default function StackIcon ({ width, height }: IconProps) {
     </svg>
   )
 }
+
+const StackIcon = memo(StackIconComponent);
+export default StackIcon;

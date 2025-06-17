@@ -1,4 +1,6 @@
-export default function LinkedInIcon() {
+import { memo } from "react";
+
+function LinkedInIconComponent () {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,3 +31,6 @@ export default function LinkedInIcon() {
     </svg>
   );
 }
+
+const LinkedInIcon = memo(LinkedInIconComponent);
+export default LinkedInIcon;

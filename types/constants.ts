@@ -1,4 +1,5 @@
-import { JSX } from "react";
+import { ComponentType } from "react";
+import { IconProps } from "./icons";
 
 export type FooterLinkType = {
   id: number;
@@ -10,6 +11,20 @@ export type MenuLinkType = {
   id: number;
   name: string;
   href: string;
-  icon: (props: { width: number; height: number }) => JSX.Element;
+  icon: ComponentType<IconProps>;
   description: string;
+}
+
+export type ChannelsDataType = {
+  id: number,
+  path: string,
+  alt: string;
+  position: string;
+  positionClassName: string;
+}
+
+export type FilterType = {
+  id: number;
+  name: string;
+  query: string
 }

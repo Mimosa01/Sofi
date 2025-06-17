@@ -1,4 +1,6 @@
-export default function YouTubeIcon() {
+import { memo } from "react";
+
+function YouTubeIconComponent () {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -34,3 +36,6 @@ export default function YouTubeIcon() {
     </svg>
   );
 }
+
+const YouTubeIcon = memo(YouTubeIconComponent);
+export default YouTubeIcon;

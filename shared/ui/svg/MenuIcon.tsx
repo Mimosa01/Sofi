@@ -1,4 +1,6 @@
-export default function MenuIcon () {
+import { memo } from "react"
+
+function MenuIconComponent () {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
       <path d="M6.75 2.25C7.14782 2.25 7.52936 2.40804 7.81066 2.68934C8.09196 2.97064 8.25 3.35218 8.25 3.75V6.75C8.25 7.14782 8.09196 7.52936 7.81066 7.81066C7.52936 8.09196 7.14782 8.25 6.75 8.25H3.75C3.35218 8.25 2.97064 8.09196 2.68934 7.81066C2.40804 7.52936 2.25 7.14782 2.25 6.75V3.75C2.25 3.35218 2.40804 2.97064 2.68934 2.68934C2.97064 2.40804 3.35218 2.25 3.75 2.25H6.75Z" fill="#232325"/>
@@ -8,3 +10,6 @@ export default function MenuIcon () {
     </svg>
   )
 }
+
+const MenuIcon = memo(MenuIconComponent);
+export default MenuIcon;

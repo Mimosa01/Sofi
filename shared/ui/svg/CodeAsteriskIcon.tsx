@@ -1,6 +1,7 @@
 import { IconProps } from "@/types/icons"
+import { memo } from "react"
 
-export default function CodeAsteriskIcon ({ width, height }: IconProps) {
+function CodeAsteriskIconComponent ({ width, height }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 20 20" fill="none">
       <path d="M5 15.8334C4.55797 15.8334 4.13405 15.6578 3.82149 15.3453C3.50893 15.0327 3.33333 14.6088 3.33333 14.1667V10.8334L2.5 10.0001L3.33333 9.16675V5.83341C3.33333 5.39139 3.50893 4.96746 3.82149 4.6549C4.13405 4.34234 4.55797 4.16675 5 4.16675" stroke="#333333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -14,3 +15,6 @@ export default function CodeAsteriskIcon ({ width, height }: IconProps) {
     </svg>
   )
 }
+
+const CodeAsteriskIcon = memo(CodeAsteriskIconComponent);
+export default CodeAsteriskIcon;

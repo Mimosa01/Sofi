@@ -2,6 +2,7 @@ import DropdownSpecializations from '@/components/dropdown/widgets/DropdownSpeci
 import Logo from '@/shared/ui/atoms/Logo';
 import Link from 'next/link';
 import ProfileButton from '../molecules/ProfileButton';
+import { Suspense } from 'react';
 
 export default function Header () {  
   return (
@@ -10,7 +11,9 @@ export default function Header () {
         <Logo isMain />
       </Link>
       
-      <DropdownSpecializations />
+      <Suspense>
+        <DropdownSpecializations />
+      </Suspense>
 
       <ProfileButton />
     </header>

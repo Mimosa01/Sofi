@@ -1,9 +1,9 @@
-import CategorySection from "@/components/category/CategorySection";
-import HeroSection from "@/components/hero/widgets/HeroSection";
+import CategorySection from "@/components/categorySection/CategorySection";
+import HeroSection from "@/components/heroSection/widgets/HeroSection";
 
 export default function MainPage () {
   return (
-    <main>
+    <main className="bg-[url(/images/bgHero.png)] bg-no-repeat bg-contain">
       <HeroSection />
       <CategorySection />
     </main>

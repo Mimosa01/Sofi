@@ -9,15 +9,55 @@ import SparklesIcon from "@/shared/ui/svg/SparklesIcon";
 import StackIcon from "@/shared/ui/svg/StackIcon";
 
 export const MOBILE_WIDTH_QUERY = '(max-width: 768px)';
-export const SPECIALIZATION_BUTTONS = ['Python', 'Java', 'JavaScript', 'Data Science', 'QA', 'C#'];
 export const PHONE_NUMBER = '+7 (499) 110-82-76';
 export const PHONE_LINK = '+74991108276';
 export const EMAIL_LINK = 'yourcodereview@gmail.com';
+export enum ALL_PARAMS {
+  SPECIALITY = 'speciality',
+  LOCATION = 'location',
+  SOURCE = 'source'
+}
+export enum ALL_PATHS {
+  VACANCIES = 'vacancies',
+  TASKS = 'testtasks'
+}
+export const SPECIALIZATIONS = [
+  {
+    id: 1,
+    name: 'Python',
+    query: 'Python'
+  },
+  {
+    id: 2,
+    name: 'Java',
+    query: 'Java'
+  },
+  {
+    id: 3,
+    name: 'JavaScript',
+    query: 'JS',
+  },
+  {
+    id: 4,
+    name: 'Data Science',
+    query: 'DataScience',
+  },
+  {
+    id: 5,
+    name: 'QA',
+    query: 'QA'
+  },
+  {
+    id: 6,
+    name: 'C#',
+    query: 'C#'
+  }
+]
 export const MENU_LINKS = [
   {
     id: 1,
     name: 'Вакансии / Стажировки',
-    href: '/',
+    href: ALL_PATHS.VACANCIES,
     icon: BriefcaseIcon,
     description: 'Актуальные junior-вакансии и стажировки с hh.ru, Habr.Career, LinkedIn,, Telegram и других платформ'
   },
@@ -38,7 +78,7 @@ export const MENU_LINKS = [
   {
     id: 4,
     name: 'Собеседования',
-    href: '/',
+    href: ALL_PATHS.TASKS,
     icon: MicrophoneIcon,
     description: 'Реальные вопросы с интервью, сгруппированные по стеку и уровню сложности - с пояснениями и примерами ответов'
   },
@@ -78,7 +118,6 @@ export const MENU_LINKS = [
     description: 'База резюме соискателей. Свяжитесь с понравившемся кандидатами напрямую'
   },
 ]
-
 export const FOOTER_LINKS = [
   {
     id: 1,
@@ -124,5 +163,105 @@ export const FOOTER_LINKS = [
     id: 9,
     name: 'Вопросы и ответы',
     href: '/'
+  },
+]
+export const CHANNELS_DATA = [
+  {
+    id: 1,
+    path: '/images/youngJune.png',
+    alt: '@young_june',
+    position: 'top-6.5 left-7.5',
+    positionClassName: 'bottom-0 left-4 -rotate-11'
+  },
+  {
+    id: 2,
+    path: '/images/itInterns.png',
+    alt: '@it_interns',
+    position: 'top-7 right-10.5',
+    positionClassName: 'top-3 -left-1/4 rotate-7'
+  },
+  {
+    id: 3,
+    path: '/images/junoJobs.png',
+    alt: '@juno_jobs',
+    position: 'top-34 left-32',
+    positionClassName: 'bottom-0 -left-1/8 rotate-17'
+  },
+  {
+    id: 4,
+    path: '/images/youngIntern.png',
+    alt: '@young_intern',
+    position: 'top-57 right-6',
+    positionClassName: 'top-0 -rotate-7'
+  },
+  {
+    id: 5,
+    path: '/images/bigTech.png',
+    alt: '@bigtechjobs',
+    position: 'bottom-41 left-9',
+    positionClassName: 'bottom-5 left-1/3 -rotate-4'
+  },
+  {
+    id: 6,
+    path: '/images/juniorDesigners.png',
+    alt: '@junior_designers',
+    position: 'bottom-11 left-15',
+    positionClassName: 'top-1/3 -left-1/8 rotate-5'
+  },
+  {
+    id: 7,
+    path: '/images/yourCodeReview.png',
+    alt: '@YourCodeReview',
+    position: 'bottom-15 right-12',
+    positionClassName: 'bottom-5 -left-1/10 -rotate-10'
+  },
+]
+export const CITIES = [
+  {
+    id: 1,
+    name: 'Москва',
+    query: 'Andrewchester'
+  },
+  {
+    id: 2,
+    name: 'Санкт-Петербург',
+    query: 'Williamsville'
+  },
+  {
+    id: 3,
+    name: 'Нижний Новгород',
+    query: 'Myershaven'
+  },
+  {
+    id: 4,
+    name: 'Омск',
+    query: 'Devonbury'
+  },
+  {
+    id: 5,
+    name: 'Красноярск',
+    query: 'Port Laurenland'
+  },
+  {
+    id: 6,
+    name: 'Самара',
+    query: 'West Dennisfurt'
+  },
+]
+export const SOURCES = [
+  {
+    id: 1,
+    name: 'LinkedIn',
+    query: 'LinkedIn'
+  },
+  {
+    id: 2,
+    name: 'Indeed',
+    query: 'Indeed'
+  },
+  {
+    id: 2,
+    name: 'HH.ru',
+    query: 'HH.ru'
   },
 ]

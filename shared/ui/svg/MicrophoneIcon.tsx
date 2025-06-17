@@ -1,6 +1,7 @@
 import { IconProps } from "@/types/icons"
+import { memo } from "react"
 
-export default function MicrophoneIcon ({ width, height }: IconProps) {
+function MicrophoneIconComponent ({ width, height }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 20 20" fill="none">
       <path d="M7.5 4.16675C7.5 3.50371 7.76339 2.86782 8.23223 2.39898C8.70107 1.93014 9.33696 1.66675 10 1.66675C10.663 1.66675 11.2989 1.93014 11.7678 2.39898C12.2366 2.86782 12.5 3.50371 12.5 4.16675V8.33342C12.5 8.99646 12.2366 9.63234 11.7678 10.1012C11.2989 10.57 10.663 10.8334 10 10.8334C9.33696 10.8334 8.70107 10.57 8.23223 10.1012C7.76339 9.63234 7.5 8.99646 7.5 8.33342V4.16675Z" stroke="#333333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -10,3 +11,6 @@ export default function MicrophoneIcon ({ width, height }: IconProps) {
     </svg>
   )
 }
+
+const MicrophoneIcon = memo(MicrophoneIconComponent);
+export default MicrophoneIcon;

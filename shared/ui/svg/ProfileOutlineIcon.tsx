@@ -1,6 +1,7 @@
 import { IconProps } from "@/types/icons"
+import { memo } from "react"
 
-export default function ProfileOutlineIcon ({ width, height }: IconProps) {
+function ProfileOutlineIconComponent ({ width, height }: IconProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 20 20" fill="none">
       <g clipPath="url(#clip0_117_1920)">
@@ -15,3 +16,6 @@ export default function ProfileOutlineIcon ({ width, height }: IconProps) {
     </svg>
   )
 }
+
+const ProfileOutlineIcon = memo(ProfileOutlineIconComponent);
+export default ProfileOutlineIcon;

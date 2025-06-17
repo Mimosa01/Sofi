@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { memo, ReactNode } from "react";
 import Input from "../atoms/Input";
 import Label from "../atoms/Label";
 import Text from "../atoms/Text";
@@ -14,10 +14,10 @@ type Props = {
   errorMessage?: string;
 }
 
-export default function InputField ({ htmlFor, fieldName, placeholder, type, button, disabled, errorMessage }: Props) {
+function InputFieldComponent ({ htmlFor, fieldName, placeholder, type, button, disabled, errorMessage }: Props) {
   return (
     <Label htmlFor={htmlFor}>
-      <Text>{ fieldName }</Text>
+      <Text className="text-base leading-4.5">{ fieldName }</Text>
       <div className="relative">
         <Input 
           htmlFor={htmlFor}
@@ -38,3 +38,6 @@ export default function InputField ({ htmlFor, fieldName, placeholder, type, but
     </Label>
   )
 }
+
+const InputField = memo(InputFieldComponent);
+export default InputField;

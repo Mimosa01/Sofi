@@ -49,6 +49,7 @@
   --color-quinary-700: #071400;
 
   --gradient-primary: linear-gradient(90deg, #2093FE 0%, #C217FE 90%);
+  --gradient-primary-300: linear-gradient(90deg, rgba(244, 184, 184, 0.5), rgba(227, 179, 234, 0.5), rgba(197, 201, 241, 0.5));
 }
 
 @keyframes scroll {
