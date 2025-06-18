@@ -1,9 +1,13 @@
 import FiltersVacancies from "@/components/vacancies/widgets/FiltersVacancies";
+import BackgroundGradient from "@/shared/ui/atoms/BackgroundGradient";
 import HeroPage from "@/shared/ui/molecules/HeroPage";
 
 export default function VacanciesPage () {
   return (
-    <main className="w-full bg-[url(/images/bgHero.png)] bg-no-repeat bg-cover">
+    <main className="relative">
+      <BackgroundGradient 
+        className="-top-1/2 left-0" 
+      />
       <section className="mx-auto max-w-[1022px]">
         <HeroPage 
           header="Вакансии по Data Science"

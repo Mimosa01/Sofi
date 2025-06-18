@@ -10,7 +10,7 @@ export default function Footer () {
         rightText="Сайт был сделан джунами с нашего карьерного трека"
       />
 
-      <div className="px-4 py-5 md:px-27.5 md:py-15 bg-radial-gradient">
+      <div className="px-4 py-5 md:px-27.5 md:py-15 w-full bg-neutral-800 bg-radial-gradient">
         <FooterTopSection />
         <FooterBottomSection />
       </div>

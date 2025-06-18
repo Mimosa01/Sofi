@@ -66,9 +66,9 @@
 }
 
 .bg-radial-gradient {
-  position: relative;
-  background-color: #262626;
-  overflow: hidden;
+  position: absolute;
+  /* background-color: #262626; */
+  /* overflow: hidden; */
 }
 
 .bg-radial-gradient::before {
