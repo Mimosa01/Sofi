@@ -12,7 +12,7 @@ export default function VacanciesList ({ items }: Props) {
     <div className="grid grid-cols-2 gap-4 auto-rows-[204px] mb-5">
       {items.map((item, index) => (
         <Fragment key={item.id}>
-          {index === 3 && <AdvertisingCard />}
+          {index === 3 && <AdvertisingCard type="simple" />}
           <CardVacancy item={item} />
         </Fragment>
       ))}

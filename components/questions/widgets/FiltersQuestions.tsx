@@ -3,7 +3,7 @@ import { ALL_PARAMS, GRADES, SPECIALIZATIONS, STACKS } from "@/lib/constants/con
 
 export default function FiltersQuestions () {
   return (
-    <div className="flex gap-2.5">
+    <div className="flex gap-2.5 mb-[25px]">
       <DropdownFilter 
         items={SPECIALIZATIONS}
         paramKey={ALL_PARAMS.SPECIALITY}

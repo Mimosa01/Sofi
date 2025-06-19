@@ -1,4 +1,4 @@
-import { SPECIALITY_TAGS_MAP, DEFAULT_FILTER_TAGS } from "@/lib/constants/contants";
+import { SPECIALITY_TAGS_MAP, DEFAULT_FILTER_TAGS, ALL_PATHS } from "@/lib/constants/contants";
 import VacanciesPage from "./VacanciesPage";
 import { fetcher } from "@/lib/fetch/fetcher";
 import { getQueryPath } from "@/lib/utils/getQueryPath";
@@ -14,7 +14,7 @@ export default async function Page({ searchParams }: SearchParamsType) {
     ? [...SPECIALITY_TAGS_MAP[speciality], ...DEFAULT_FILTER_TAGS]
     : DEFAULT_FILTER_TAGS;
 
-  const data: VacancyType[] = await fetcher(`/vacancies${queryPath}`, undefined, {
+  const data: VacancyType[] = await fetcher(`${ALL_PATHS.VACANCIES}${queryPath}`, undefined, {
     revalidate: 60,
   });
 

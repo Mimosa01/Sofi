@@ -1,16 +1,18 @@
 import FiltersQuestions from "@/components/questions/widgets/FiltersQuestions";
+import QuestionList from "@/components/questions/widgets/QuestionsList";
 import { ALL_PATHS } from "@/lib/constants/contants";
 import { getNameByQuery } from "@/lib/utils/getNameByQuery";
 import BackgroundGradient from "@/shared/ui/atoms/BackgroundGradient";
 import HeroPage from "@/shared/ui/molecules/HeroPage";
 import SeoTagList from "@/shared/ui/molecules/SeoTagList";
 import { PropsPage, QuestionType } from "@/types/constants";
+import { Suspense } from "react";
 
-export default function QuestionsPage ({ speciality, seoTagsList }: PropsPage<QuestionType>) {
+export default function QuestionsPage ({ speciality, seoTagsList, data }: PropsPage<QuestionType>) {
   const header = getNameByQuery('speciality', speciality as string, '')
 
   return (
-    <main className="relative pb-5">
+    <main className="relative px-[15px] pb-5">
       <BackgroundGradient 
         className="absolute -top-1/8 left-0" 
       />
@@ -22,7 +24,10 @@ export default function QuestionsPage ({ speciality, seoTagsList }: PropsPage<Qu
             которые задают работодатели, а также готовые ответы и пояснения. Вопросы сгруппированы по стеку и уровню сложности
           "
         />
-        <FiltersQuestions />
+        <Suspense>
+          <FiltersQuestions />
+        </Suspense>
+        <QuestionList items={data}/>
 
         <SeoTagList basePath={ALL_PATHS.VACANCIES} tagsList={seoTagsList} />
       </section>
