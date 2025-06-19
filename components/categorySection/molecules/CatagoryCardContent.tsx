@@ -20,7 +20,7 @@ export default function CategoryCardContent({ icon: Icon, name, description }: P
         </Text>
       </div>
       
-      <Heading level={3} className="mt-auto font-medium leading-4.5 tracking-[0.05px]">{name}</Heading>
+      <Heading level={2} className="mt-auto font-medium leading-4.5 tracking-[0.05px]">{name}</Heading>
     </div>
   );
 }
