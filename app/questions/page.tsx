@@ -1,22 +1,22 @@
+import QuestionsPage from "./QuestionsPage";
 import { SPECIALITY_TAGS_MAP, DEFAULT_FILTER_TAGS } from "@/lib/constants/contants";
-import VacanciesPage from "./VacanciesPage";
 import { fetcher } from "@/lib/fetch/fetcher";
 import { getQueryPath } from "@/lib/utils/getQueryPath";
-import { SearchParamsType, VacancyType } from "@/types/constants";
+import { QuestionType, SearchParamsType } from "@/types/constants";
 
 export default async function Page({ searchParams }: SearchParamsType) {
   const params = await searchParams;
   const specialityRaw = params.speciality;
   const speciality = Array.isArray(specialityRaw) ? specialityRaw[0] : specialityRaw ?? '';
   const queryPath = getQueryPath(params);
-  
+
   const tags = speciality && SPECIALITY_TAGS_MAP[speciality]
     ? [...SPECIALITY_TAGS_MAP[speciality], ...DEFAULT_FILTER_TAGS]
     : DEFAULT_FILTER_TAGS;
 
-  const data: VacancyType[] = await fetcher(`/vacancies${queryPath}`, undefined, {
+  const data: QuestionType[] = await fetcher(`/vacancies${queryPath}`, undefined, {
     revalidate: 60,
   });
 
-  return (<VacanciesPage seoTagsList={tags} data={data} speciality={specialityRaw as string}/>);
+  return (<QuestionsPage speciality={specialityRaw as string} seoTagsList={tags} data={data}/>)
 }

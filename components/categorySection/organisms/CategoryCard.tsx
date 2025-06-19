@@ -6,11 +6,13 @@ import { GradientBackground } from "../lib/GradientBackground";
 
 type Props = {
   item: MenuLinkType;
+  paramKey: string;
 };
 
-export default function CategoryCard({ item }: Props) {
+export default function CategoryCard({ item, paramKey }: Props) {
+  const queryPath = paramKey !== '' ? '?speciality=' + paramKey : '';
   return (
-    <Link href={item.href} className={`
+    <Link  href={`${item.href + queryPath}`} className={`
       relative flex flex-col gap-3.5  p-[14px] md:p-5 h-37 md:h-70 text-base md:text-xl font-semibold leading-5 rounded-md bg-neutral-100 overflow-hidden group
     `}>
       <GradientBackground id={item.id}/>

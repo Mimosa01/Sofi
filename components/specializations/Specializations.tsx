@@ -7,9 +7,10 @@ import { getNameByQuery } from '@/lib/utils/getNameByQuery';
 
 type Props = {
   fontSize: 'text-lg' | 'text-[22px]';
+  className?: string;
 };
 
-export default function Specializations({ fontSize }: Props) {
+export default function Specializations({ fontSize, className }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const selectedSpec = searchParams.get('speciality') || '';
@@ -27,6 +28,7 @@ export default function Specializations({ fontSize }: Props) {
       selected={getNameByQuery('speciality', selectedSpec, '')}
       onSelect={setSpec}
       fontSizeClass={fontSizeClass}
+      className={className}
     />
   );
 }

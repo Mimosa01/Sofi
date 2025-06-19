@@ -7,6 +7,7 @@ import MicrophoneIcon from "@/shared/ui/svg/MicrophoneIcon";
 import ProfileOutlineIcon from "@/shared/ui/svg/ProfileOutlineIcon";
 import SparklesIcon from "@/shared/ui/svg/SparklesIcon";
 import StackIcon from "@/shared/ui/svg/StackIcon";
+import { FilterType } from "@/types/constants";
 
 export const MOBILE_WIDTH_QUERY = '(max-width: 768px)';
 export const PHONE_NUMBER = '+7 (499) 110-82-76';
@@ -15,11 +16,13 @@ export const EMAIL_LINK = 'yourcodereview@gmail.com';
 export enum ALL_PARAMS {
   SPECIALITY = 'speciality',
   LOCATION = 'location',
-  SOURCE = 'source'
+  SOURCE = 'source',
+  STACK = 'stack',
+  GRADE = 'position'
 }
 export enum ALL_PATHS {
-  VACANCIES = 'vacancies',
-  TASKS = 'testtasks'
+  VACANCIES = '/vacancies',
+  QUESTIONS = '/questions'
 }
 export const SPECIALIZATIONS = [
   {
@@ -78,7 +81,7 @@ export const MENU_LINKS = [
   {
     id: 4,
     name: 'Собеседования',
-    href: ALL_PATHS.TASKS,
+    href: ALL_PATHS.QUESTIONS,
     icon: MicrophoneIcon,
     description: 'Реальные вопросы с интервью, сгруппированные по стеку и уровню сложности - с пояснениями и примерами ответов'
   },
@@ -260,8 +263,50 @@ export const SOURCES = [
     query: 'Indeed'
   },
   {
-    id: 2,
+    id: 3,
     name: 'HH.ru',
     query: 'HH.ru'
   },
 ]
+export const STACKS = [
+  {
+    id: 1,
+    name: 'Java Java',
+    query: 'java java',
+  },
+  {
+    id: 2,
+    name: 'JS Java Go',
+    query: 'js java go',
+  },
+]
+export const GRADES = [
+  {
+    id: 1,
+    name: 'Junior',
+    query: 'IT consultant'
+  }
+]
+export const DEFAULT_FILTER_TAGS = [
+  {
+    id: 1,
+    name: "Стажировки без опыта",
+    query: 'intership=true',
+  },
+  {
+    id: 2,
+    name: "Junior вакансии",
+    query: 'level=junior',
+  },
+];
+
+export const SPECIALITY_TAGS_MAP: Record<string, FilterType[]> = {
+  Python: [
+    { id: 10, name: "Python вакансии", query: 'speciality=Python' },
+    { id: 11, name: "Стажировки Python", query: 'speciality=Python&intership=true'},
+  ],
+  JS: [
+    { id: 20, name: "JS вакансии", query: 'speciality=JS' },
+  ],
+  
+};

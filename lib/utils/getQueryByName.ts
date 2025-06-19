@@ -1,5 +1,5 @@
 import { FilterType } from "@/types/constants";
-import { CITIES, SOURCES, SPECIALIZATIONS } from "../constants/contants";
+import { CITIES, GRADES, SOURCES, SPECIALIZATIONS, STACKS } from "../constants/contants";
 
 export function getQueryByName (paramKey: string, value: string, defaultLabel: string): string {
   let filterArr: FilterType[] = [];
@@ -15,6 +15,14 @@ export function getQueryByName (paramKey: string, value: string, defaultLabel: s
 
     case 'source':
       filterArr = SOURCES;
+      break;
+
+    case 'stack':
+      filterArr = STACKS;
+      break;
+
+    case 'position':
+      filterArr = GRADES;
       break;
   }
 

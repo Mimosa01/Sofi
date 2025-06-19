@@ -1,11 +1,11 @@
 import DropdownFilter from "@/components/dropdown/widgets/DropdownFilter";
 import { ALL_PARAMS, CITIES, SOURCES, SPECIALIZATIONS } from "@/lib/constants/contants";
 import Button from "@/shared/ui/atoms/Button";
-import ButtonSwitch from "@/shared/ui/molecules/ButtonSwitch";
+import FilterSwitch from "../organisms/FilterSwitch";
 
 export default function FiltersVacancies () {
   return (
-    <div className="flex gap-5 mb-[25px]">
+    <div className="flex justify-between mb-[25px]">
       <Button className="px-[15px] py-3 bg-[image:var(--gradient-primary-300)] rounded-xl flex items-center justify-between gap-4">
         Добавить вакансию
       </Button>
@@ -25,8 +25,8 @@ export default function FiltersVacancies () {
           paramKey={ALL_PARAMS.LOCATION}
           defaultLabel="Город"
         />
-        <ButtonSwitch text="Удаленно" />
-        <ButtonSwitch text="Стажировка" />
+        <FilterSwitch text="Удаленно" paramKey="remote" defaultLabel="false"/>
+        <FilterSwitch text="Стажировка" paramKey="intership" defaultLabel="false"/>
       </div>
     </div>
   )

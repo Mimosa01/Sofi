@@ -1,4 +1,4 @@
-import CategorySection from "@/components/categorySection/CategorySection";
+import CategorySection from "@/components/categorySection/widgets/CategorySection";
 import HeroSection from "@/components/heroSection/widgets/HeroSection";
 import BackgroundGradient from "@/shared/ui/atoms/BackgroundGradient";
 

@@ -1,0 +1,22 @@
+import Heading from "@/shared/ui/atoms/Heading";
+import LinkAds from "../atoms/LinkAds";
+import Image from "next/image";
+
+export default function SimpleBodyCard () {
+  return (
+    <div className="p-[15px] gradient-ads-card rounded-lg">
+      <Heading level={3} className="mb-2 w-[80%] text-neutral-800 font-semibold text-[22px] leading-6">
+        Больше никакого поиска и откликов — автоматизируй свой путь к работе вместе с Софи!
+      </Heading>
+      <div className="flex justify-between items-end rounded-lg">
+        <LinkAds className="px-[15px] py-2.5 text-white text-base leading-4.5 bg-neutral-800 rounded-xl"/>
+        <Image 
+          src={'/images/sofi.png'}
+          alt="Sofi"
+          width={94}
+          height={94}
+        />
+      </div>
+    </div>
+  )
+}

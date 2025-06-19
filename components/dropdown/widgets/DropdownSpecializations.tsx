@@ -19,7 +19,7 @@ export default function DropdownSpecializations() {
     <Dropdown dropdownRef={dropdownRef}>
       <DropdownTrigger label={getNameByQuery('speciality', selectedSpec, 'Специализация')} isOpen={isOpen} onClick={toggle} icon={<MenuIcon />}/>
       <DropdownSpecialityMenu isOpen={isOpen}>
-        <Specializations fontSize={'text-lg'} />
+        <Specializations fontSize={'text-lg'} className="flex-nowrap py-2 md:py-0 overflow-auto"/>
         <HeaderLinks />
       </DropdownSpecialityMenu>
     </Dropdown>

@@ -62,13 +62,11 @@
 }
 
 .animate-marquee {
-  animation: scroll 30s linear infinite;
+  animation: scroll 100s linear infinite;
 }
 
 .bg-radial-gradient {
   position: absolute;
-  /* background-color: #262626; */
-  /* overflow: hidden; */
 }
 
 .bg-radial-gradient::before {
@@ -99,5 +97,22 @@
     rgba(238, 185, 2, 0.1) 0%,
     rgba(242, 143, 210, 0.1) 50%,
     rgba(98, 180, 255, 0.1) 100%
+  );
+}
+
+.gradient-ads-card {
+  background: linear-gradient(
+    to right,
+    rgba(244, 184, 184, 0.3),
+    rgba(227, 179, 234, 0.3),
+    rgba(197, 201, 241, 0.3)
+  );
+}
+
+.gradient-primary-100 {
+  background: linear-gradient(
+    to right,
+    rgba(32, 147, 254, 1),
+    rgba(194, 23, 254, 0.9)
   );
 }

@@ -6,11 +6,12 @@ type Props = {
   selected: string;
   onSelect: (name: string) => void;
   fontSizeClass: string;
+  className?: string
 };
 
-export default function SpecializationList({ items, selected, onSelect, fontSizeClass }: Props) {
+export default function SpecializationList({ items, selected, onSelect, fontSizeClass, className }: Props) {
   return (
-    <ul className="flex flex-wrap md:flex-nowrap gap-2.5 mb-5 justify-center">
+    <ul className={`flex gap-2.5 mb-5 ${className}`}>
       {items.map((item) => (
         <li key={item.id}>
           <SpecializationButton
