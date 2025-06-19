@@ -66,3 +66,10 @@ export type PropsPage<T> = {
   seoTagsList: FilterType[];
   data: T[]
 }
+
+export type ResponceType<T> = {
+  items: T[];
+  total: number;
+  skip: number;
+  limit: number;
+}

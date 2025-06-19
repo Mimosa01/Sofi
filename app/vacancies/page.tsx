@@ -2,7 +2,7 @@ import { SPECIALITY_TAGS_MAP, DEFAULT_FILTER_TAGS, ALL_PATHS } from "@/lib/const
 import VacanciesPage from "./VacanciesPage";
 import { fetcher } from "@/lib/fetch/fetcher";
 import { getQueryPath } from "@/lib/utils/getQueryPath";
-import { SearchParamsType, VacancyType } from "@/types/constants";
+import { ResponceType, SearchParamsType, VacancyType } from "@/types/constants";
 
 export default async function Page({ searchParams }: SearchParamsType) {
   const params = await searchParams;
@@ -14,9 +14,9 @@ export default async function Page({ searchParams }: SearchParamsType) {
     ? [...SPECIALITY_TAGS_MAP[speciality], ...DEFAULT_FILTER_TAGS]
     : DEFAULT_FILTER_TAGS;
 
-  const data: VacancyType[] = await fetcher(`${ALL_PATHS.VACANCIES}${queryPath}`, undefined, {
+  const data: ResponceType<VacancyType> = await fetcher(`${ALL_PATHS.VACANCIES}${queryPath}`, undefined, {
     revalidate: 60,
   });
-
-  return (<VacanciesPage seoTagsList={tags} data={data} speciality={specialityRaw as string}/>);
+  
+  return (<VacanciesPage seoTagsList={tags} data={data.items} speciality={specialityRaw as string}/>);
 }

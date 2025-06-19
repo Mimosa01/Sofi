@@ -11,12 +11,13 @@ export default function SimpleBodyCard () {
       <div className="flex justify-between items-end rounded-lg">
         <LinkAds className="px-[15px] py-2.5 text-white text-base leading-4.5 bg-neutral-800 rounded-xl"/>
         <Image 
+          priority
           src={'/images/sofi.png'}
           alt="Sofi"
-          width={94}
-          height={94}
+          width={96.1}
+          height={99}
           className="aspect-[138/143]"
-          style={{ width: "auto", height: "auto" }}
+          // style={{ width: '96.1px', height: '99px' }}
         />
       </div>
     </div>
