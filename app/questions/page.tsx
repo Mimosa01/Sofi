@@ -18,7 +18,5 @@ export default async function Page({ searchParams }: SearchParamsType) {
     revalidate: 60,
   });
 
-  console.log(data)
-
   return (<QuestionsPage speciality={specialityRaw as string} seoTagsList={tags} data={data}/>)
 }

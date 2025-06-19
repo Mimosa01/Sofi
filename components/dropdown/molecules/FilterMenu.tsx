@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { getNameByQuery } from "@/lib/utils/getNameByQuery";

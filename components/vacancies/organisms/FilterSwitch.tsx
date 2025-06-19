@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 
 type Props = {
   text: string;
-  paramKey: string;         // например: "intership"
-  defaultLabel: string;     // не используется в логике ниже, но можешь адаптировать под подписи
+  paramKey: string;
+  defaultLabel: string;
 }
 
 export default function FilterSwitch({ text, paramKey }: Props) {
