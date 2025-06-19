@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function SimpleBodyCard () {
   return (
-    <div className="p-[15px] gradient-ads-card rounded-lg">
-      <Heading level={3} className="mb-2 w-[80%] text-neutral-800 font-semibold text-[22px] leading-6">
+    <div className="flex flex-col justify-between p-[15px] gradient-ads-card rounded-lg">
+      <Heading level={3} className="w-[80%] text-neutral-800 font-semibold text-[22px] leading-6">
         Больше никакого поиска и откликов — автоматизируй свой путь к работе вместе с Софи!
       </Heading>
       <div className="flex justify-between items-end rounded-lg">
@@ -15,6 +15,8 @@ export default function SimpleBodyCard () {
           alt="Sofi"
           width={94}
           height={94}
+          className="aspect-[138/143]"
+          style={{ width: "auto", height: "auto" }}
         />
       </div>
     </div>

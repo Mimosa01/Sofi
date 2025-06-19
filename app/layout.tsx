@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { wixMadeforText, wixMadeforDisplay } from "./fonts";
+import { wixMadeforDisplay } from "./fonts";
 import Footer from "@/components/footer/widgets/Footer";
 import Header from "@/components/header/widgets/Header";
 import Modal from "@/components/modal/widgets/Modal";
@@ -47,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${wixMadeforText.variable} ${wixMadeforDisplay.variable}`}>
+    <html lang="ru" className={`${wixMadeforDisplay.variable}`}>
       <body>
         <Header />
         {children}

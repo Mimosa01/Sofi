@@ -1,3 +1,4 @@
+import { wixMadeforText } from "@/app/fonts";
 import { IconProps } from "@/types/icons";
 import Link from "next/link";
 import { ComponentType, JSX, memo } from "react";
@@ -16,7 +17,7 @@ function IconTextLinkComponent ({ external, label, href, icon: Icon, sizeIcon, n
   const Tag = (external ? 'a' : Link) as keyof JSX.IntrinsicElements; 
 
   return (
-    <Tag href={href} aria-label={label} className={`flex gap-1.5 items-center whitespace-nowrap group transition-all duration-400 ease-in-out ${className}`}>
+    <Tag href={href} aria-label={label} className={`flex gap-1.5 items-center whitespace-nowrap group transition-all duration-400 ease-in-out ${className} ${wixMadeforText.variable}`}>
       { Icon && <Icon width={sizeIcon?.width || 20} height={sizeIcon?.height || 20} /> }
       {name && <span>{name}</span>}
     </Tag>

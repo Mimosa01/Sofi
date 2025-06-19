@@ -6,6 +6,7 @@ import { getNameByQuery } from "@/lib/utils/getNameByQuery";
 import CheckMarkIcon from "@/shared/ui/svg/CheckMarkIcon";
 import { FilterType } from "@/types/constants";
 import { getQueryByName } from "@/lib/utils/getQueryByName";
+import { wixMadeforText } from "@/app/fonts";
 
 type Props = {
   items: FilterType[];
@@ -28,6 +29,7 @@ export default function FilterMenu({ items, paramKey, defaultLabel }: Props) {
           className={`
             flex justify-between w-full px-4 py-2 text-lg leading-5.5
             hover:bg-neutral-200 text-neutral-500 transition-all duration-300
+            ${wixMadeforText.variable}
           `}
         >
           Сбросить
@@ -45,6 +47,7 @@ export default function FilterMenu({ items, paramKey, defaultLabel }: Props) {
               className={`
                 flex justify-between w-full px-4 py-2 text-lg leading-5.5
                 hover:bg-neutral-200 transition-all duration-300
+                ${wixMadeforText.variable}
               `}
             >
               {item.name}
