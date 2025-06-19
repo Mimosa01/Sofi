@@ -13,7 +13,7 @@ export default function ProfileButton () {
   }
 
   return (
-    <Button onClick={handleClick}>
+    <Button onClick={handleClick} aria-label="Войти">
       <ProfileIcon />
       <span className='hidden md:inline'>Войти</span>
     </Button>
