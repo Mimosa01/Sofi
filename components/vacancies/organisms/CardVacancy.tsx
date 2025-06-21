@@ -11,14 +11,14 @@ type Props = {
 
 export default function CardVacancy ({ item }: Props) {
   return (
-    <article className="flex flex-col justify-between p-[15px] font-wix-display bg-neutral-100 rounded-lg group">
+    <article className="flex flex-col gap-7.5 justify-between p-[15px] font-wix-display bg-neutral-100 rounded-lg group">
       <div>
-        <a href={item.url} className="">
-          <Heading level={3} className="mb-2.5 text-neutral-800 font-semibold text-[22px] leading-6.5 group-hover:text-primary-500 transition-colors duration-100">{ item.title }</Heading>
+        <a href={item.url}>
+          <Heading level={3} className="mb-2.5 text-neutral-800 font-semibold text-lg lg:text-[22px] leading-6.5 line-clamp-2 group-hover:text-primary-500 transition-colors duration-100">{ item.title }</Heading>
         </a>
         <TagCard internship={item.internship} remote={item.remote} salary={item.salary} />
       </div>
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-end">
         <CompanyInfo image={item.image} companyName={item.company_name} location={item.location}/>
         <Text className="text-neutral-500 text-base">{ formatDate(item.date_publication) }</Text>
       </div>

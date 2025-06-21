@@ -5,11 +5,11 @@ import FilterSwitch from "../organisms/FilterSwitch";
 
 export default function FiltersVacancies () {
   return (
-    <div className="flex justify-between mb-[25px]">
-      <Button className="px-[15px] py-3 bg-[image:var(--gradient-primary-300)] rounded-xl flex items-center justify-between gap-4">
+    <div className="flex flex-wrap justify-between gap-4 mb-[25px] pb-2 md:pb-0 w-full">
+      <Button className="px-[15px] py-3 text-nowrap bg-[image:var(--gradient-primary-300)] rounded-xl">
         Добавить вакансию
       </Button>
-      <div className="flex gap-2.5">
+      <div className="flex flex-wrap gap-2.5">
         <DropdownFilter 
           items={SPECIALIZATIONS}
           paramKey={ALL_PARAMS.SPECIALITY}

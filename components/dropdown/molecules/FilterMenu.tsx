@@ -12,9 +12,10 @@ type Props = {
   items: FilterType[];
   paramKey: string;
   defaultLabel: string;
+  toggle: () => void;
 };
 
-export default function FilterMenu({ items, paramKey, defaultLabel }: Props) {
+export default function FilterMenu({ items, paramKey, defaultLabel, toggle }: Props) {
   const searchParams = useSearchParams();
   const current = searchParams.get(paramKey) || defaultLabel;
   const clearParams = new URLSearchParams(searchParams.toString());
@@ -31,6 +32,7 @@ export default function FilterMenu({ items, paramKey, defaultLabel }: Props) {
             hover:bg-neutral-200 text-neutral-500 transition-all duration-300
             ${wixMadeforText.variable}
           `}
+          onClick={toggle}
         >
           Сбросить
         </Link>
@@ -49,6 +51,7 @@ export default function FilterMenu({ items, paramKey, defaultLabel }: Props) {
                 hover:bg-neutral-200 transition-all duration-300
                 ${wixMadeforText.variable}
               `}
+              onClick={toggle}
             >
               {item.name}
               {getNameByQuery(paramKey, current, defaultLabel) === item.name && (

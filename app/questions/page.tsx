@@ -6,7 +6,9 @@ import { QuestionType, SearchParamsType } from "@/types/constants";
 
 export default async function Page({ searchParams }: SearchParamsType) {
   const params = await searchParams;
+  
   const specialityRaw = params.speciality;
+
   const speciality = Array.isArray(specialityRaw) ? specialityRaw[0] : specialityRaw ?? '';
   const queryPath = getQueryPath(params);
 
@@ -14,9 +16,16 @@ export default async function Page({ searchParams }: SearchParamsType) {
     ? [...SPECIALITY_TAGS_MAP[speciality], ...DEFAULT_FILTER_TAGS]
     : DEFAULT_FILTER_TAGS;
 
-  const data: QuestionType[] = await fetcher(`${ALL_PATHS.QUESTIONS}${queryPath}`, undefined, {
+  const data: QuestionType[] = await fetcher(5, `${ALL_PATHS.QUESTIONS}${queryPath}`, undefined, {
     revalidate: 60,
   });
 
-  return (<QuestionsPage speciality={specialityRaw as string} seoTagsList={tags} data={data}/>)
+  return (
+    <QuestionsPage 
+      speciality={specialityRaw as string} 
+      seoTagsList={tags} 
+      data={data}
+      totalPages={10}
+    />
+  )
 }

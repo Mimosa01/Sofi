@@ -9,7 +9,7 @@ type Props = {
 
 export default function VacanciesList ({ items }: Props) {
   return (
-    <div className="grid grid-cols-2 gap-4 auto-rows-[204px] mb-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows md:auto-rows-[204px] mb-5">
       {items.map((item, index) => (
         <Fragment key={item.id}>
           {index === 3 && <AdvertisingCard type="simple" />}

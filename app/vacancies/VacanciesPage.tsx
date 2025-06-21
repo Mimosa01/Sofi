@@ -5,10 +5,11 @@ import { getNameByQuery } from "@/lib/utils/getNameByQuery";
 import BackgroundGradient from "@/shared/ui/atoms/BackgroundGradient";
 import HeroPage from "@/shared/ui/molecules/HeroPage";
 import SeoTagList from "@/shared/ui/molecules/SeoTagList";
+import Pagination from "@/shared/ui/organisms/Pagination";
 import { PropsPage, VacancyType } from "@/types/constants";
 import { Suspense } from "react";
 
-export default function VacanciesPage ({ seoTagsList, data, speciality }: PropsPage<VacancyType> ) {
+export default function VacanciesPage ({ seoTagsList, data, speciality, totalPages }: PropsPage<VacancyType> ) {
   const header = getNameByQuery('speciality', speciality as string, '')
   return (
     <main className="relative px-[15px] pb-5">
@@ -24,6 +25,14 @@ export default function VacanciesPage ({ seoTagsList, data, speciality }: PropsP
           <FiltersVacancies />
         </Suspense>
         <VacanciesList items={data}/>
+        
+        {
+          totalPages > 1 &&
+          <Suspense>
+            <Pagination totalPages={totalPages} />
+          </Suspense>
+        }
+
         <SeoTagList basePath={ALL_PATHS.VACANCIES} tagsList={seoTagsList} />
       </section>
     </main>

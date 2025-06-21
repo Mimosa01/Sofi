@@ -116,3 +116,13 @@
     rgba(194, 23, 254, 0.9)
   );
 }
+
+.gradient-secondary {
+  background: linear-gradient(
+    to right,
+    rgba(244, 184, 184, 0.3),
+    rgba(234, 214, 181, 0.3),
+    rgba(227, 234, 179, 0.3),
+    rgba(197, 241, 208, 0.3)
+  );
+}

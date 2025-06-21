@@ -13,7 +13,7 @@ type Props = {
 export default function TagCard ({ internship, remote, salary }: Props) {
   const salaryText = salary ? salary.split('-')[0] : 'не указана';
   return (
-    <div className="flex gap-3 text-base leading-5 text-neutral-800">
+    <div className="flex flex-wrap gap-3 text-base leading-5 text-neutral-800">
       <div className="flex flex-nowrap items-center gap-0.5">
         {remote ? <WorldIcon /> : <BuildingIcon />}
         <Text>{remote ? 'удаленно' : 'в офис'}</Text>

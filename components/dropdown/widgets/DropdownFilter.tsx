@@ -30,7 +30,7 @@ export default function DropdownFilter ({ items, paramKey, defaultLabel }: Props
         className="px-[15px] py-3 bg-neutral-100 rounded-xl flex items-center justify-between gap-4"
       />
       <DropdownSimpleMenu isOpen={isOpen}>
-        <FilterMenu items={items} paramKey={paramKey} defaultLabel={defaultLabel} />
+        <FilterMenu items={items} paramKey={paramKey} defaultLabel={defaultLabel} toggle={toggle} />
       </DropdownSimpleMenu>
     </Dropdown>
   );

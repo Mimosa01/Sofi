@@ -64,7 +64,8 @@ export type SearchParamsType = {
 export type PropsPage<T> = {
   speciality: string;
   seoTagsList: FilterType[];
-  data: T[]
+  data: T[];
+  totalPages: number;
 }
 
 export type ResponceType<T> = {

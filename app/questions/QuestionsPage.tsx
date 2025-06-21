@@ -5,10 +5,11 @@ import { getNameByQuery } from "@/lib/utils/getNameByQuery";
 import BackgroundGradient from "@/shared/ui/atoms/BackgroundGradient";
 import HeroPage from "@/shared/ui/molecules/HeroPage";
 import SeoTagList from "@/shared/ui/molecules/SeoTagList";
+import Pagination from "@/shared/ui/organisms/Pagination";
 import { PropsPage, QuestionType } from "@/types/constants";
 import { Suspense } from "react";
 
-export default function QuestionsPage ({ speciality, seoTagsList, data }: PropsPage<QuestionType>) {
+export default function QuestionsPage ({ speciality, seoTagsList, data, totalPages }: PropsPage<QuestionType>) {
   const header = getNameByQuery('speciality', speciality as string, '')
 
   return (
@@ -28,6 +29,13 @@ export default function QuestionsPage ({ speciality, seoTagsList, data }: PropsP
           <FiltersQuestions />
         </Suspense>
         <QuestionList items={data}/>
+
+        {
+          totalPages > 1 &&
+          <Suspense>
+            <Pagination totalPages={totalPages} />
+          </Suspense>
+        }
 
         <SeoTagList basePath={ALL_PATHS.VACANCIES} tagsList={seoTagsList} />
       </section>
