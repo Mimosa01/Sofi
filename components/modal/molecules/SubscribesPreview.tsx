@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function SubscribesPreview () {
   return (
-    <div className="relative h-full bg-neutral-100 bg-[url(/images/grid.png)] bg-cover bg-center">
+    <div className="relative w-95 h-full bg-neutral-100 bg-[url(/images/grid.png)] bg-cover bg-center">
       {CHANNELS_DATA.map((item) => (
         <div key={item.id} className={`absolute ${item.position} rounded-full`}>
           <Image 

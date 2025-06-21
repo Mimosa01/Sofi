@@ -4,6 +4,7 @@ import { wixMadeforDisplay } from "./fonts";
 import Footer from "@/components/footer/widgets/Footer";
 import Header from "@/components/header/widgets/Header";
 import Modal from "@/components/modal/widgets/Modal";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "<codereview/> — вакансии, стажировки и карьерные возможности для разработчиков",
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${wixMadeforDisplay.variable}`}>
       <body>
+        <Toaster position="top-right" richColors />
         <Header />
         {children}
         <Modal />

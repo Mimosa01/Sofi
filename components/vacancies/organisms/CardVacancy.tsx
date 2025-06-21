@@ -20,7 +20,7 @@ export default function CardVacancy ({ item }: Props) {
       </div>
       <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-end">
         <CompanyInfo image={item.image} companyName={item.company_name} location={item.location}/>
-        <Text className="text-neutral-500 text-base">{ formatDate(item.date_publication) }</Text>
+        <Text className="text-neutral-600 text-base">{ formatDate(item.date_publication) }</Text>
       </div>
     </article>
   )

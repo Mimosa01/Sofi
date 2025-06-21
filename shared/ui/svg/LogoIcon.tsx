@@ -1,6 +1,6 @@
 'use client'
 
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useMediaQuery from "@/shared/hooks/useMediaQuery";
 import { MOBILE_WIDTH_QUERY } from "@/lib/constants/contants";
 import { memo } from "react";
 

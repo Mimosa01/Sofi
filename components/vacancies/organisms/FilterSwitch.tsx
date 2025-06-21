@@ -8,9 +8,10 @@ type Props = {
   text: string;
   paramKey: string;
   defaultLabel: string;
+  label: string;
 }
 
-export default function FilterSwitch({ text, paramKey }: Props) {
+export default function FilterSwitch({ text, paramKey, label }: Props) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -22,9 +23,17 @@ export default function FilterSwitch({ text, paramKey }: Props) {
     setEnabled(newValue);
 
     const params = new URLSearchParams(searchParams.toString());
-    params.set(paramKey, String(newValue));
 
-    router.replace(`?${params.toString()}`, { scroll: false });
+    if (newValue) {
+      params.set(paramKey, "true");
+    } else {
+      params.delete(paramKey);
+    }
+
+    const newQuery = params.toString();
+    const url = newQuery ? `?${newQuery}` : window.location.pathname;
+
+    router.replace(url, { scroll: false });
   };
 
   useEffect(() => {
@@ -33,6 +42,6 @@ export default function FilterSwitch({ text, paramKey }: Props) {
   }, [searchParams, paramKey]);
 
   return (
-    <ButtonSwitch text={text} enabled={enabled} toggle={toggle} />
+    <ButtonSwitch text={text} enabled={enabled} toggle={toggle} label={label} />
   );
 }

@@ -10,7 +10,7 @@ type Props = {
 export default function CardQuestion ({ item }: Props) {
   return (
     <article className="p-[15px] bg-neutral-100 rounded-lg"> 
-      <Heading level={4} className="mb-1 text-neutral-800 text-lg font-semibold leading-6">{ item.question }</Heading>
+      <Heading level={4} className="mb-1 text-neutral-800 text-lg font-semibold leading-6 line-clamp-2">{ item.question }</Heading>
       <div className="flex items-center">
         <Text className="text-neutral-600 text-lg leading-5.5 after:content-['•'] after:mx-2.5 after:text-neutral-400">
           {/* Временно пока не скажут как лучше */}

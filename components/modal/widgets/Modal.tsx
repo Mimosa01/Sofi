@@ -10,7 +10,6 @@ import useStore from "../store/modalStore";
 export default function Modal() {
   const { isShow, type, toggleShow } = useStore((state) => state);
 
-  // Блокируем скролл body при открытии модалки
   useEffect(() => {
     if (isShow) {
       document.body.classList.add('overflow-hidden');
@@ -23,7 +22,6 @@ export default function Modal() {
     };
   }, [isShow]);
 
-  // Закрытие по клику вне контента
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       toggleShow();
@@ -37,7 +35,7 @@ export default function Modal() {
       className="fixed inset-0 z-50 bg-black/40"
       onClick={handleBackdropClick}
     >
-      <div className="relative top-1/2 left-1/2 flex pt-5 md:pt-0 max-w-[355px] lg:max-w-[800px] w-full max-h-[682px] -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl z-20">
+      <div className="relative top-1/2 left-1/2 flex pt-5 md:pt-0 max-w-[355px] lg:max-w-[800px] w-full h-fit -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl z-20">
         <PreviewModal type={type} />
         <ModalForm type={type} />
         <Button

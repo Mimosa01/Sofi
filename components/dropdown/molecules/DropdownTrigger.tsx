@@ -17,10 +17,10 @@ export default function DropdownTrigger ({ icon, label, isOpen, className, onCli
       onClick={onClick}
       aria-expanded={isOpen} 
       aria-haspopup="true"
-      className={`flex items-center cursor-pointer ${className}`}
+      className={`flex items-center cursor-pointer group ${className}`}
     >
       { icon }
-      <Text className="text-neutral-800 text-base md:text-lg -tracking-[0.5px] text-nowrap">{ label }</Text>
+      <Text className="text-neutral-800 text-base md:text-lg -tracking-[0.5px] text-nowrap group-hover:text-primary-500 transition-colors duration-300">{ label }</Text>
       <ArrowDownIcon 
         className={`${ isOpen && 'rotate-180' } transition-transform duration-300`}
       />

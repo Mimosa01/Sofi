@@ -25,8 +25,8 @@ export default function FiltersVacancies () {
           paramKey={ALL_PARAMS.LOCATION}
           defaultLabel="Город"
         />
-        <FilterSwitch text="Удаленно" paramKey="remote" defaultLabel="false"/>
-        <FilterSwitch text="Стажировка" paramKey="intership" defaultLabel="false"/>
+        <FilterSwitch text="Удаленно" paramKey="remote" defaultLabel="false" label="Удаленная работу"/>
+        <FilterSwitch text="Стажировка" paramKey="intership" defaultLabel="false" label="Стажировку"/>
       </div>
     </div>
   )

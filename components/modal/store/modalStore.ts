@@ -9,11 +9,11 @@ type ModalStoreType = {
   setType: (value: ModalType) => void;
 }
 
-const useStore = create<ModalStoreType>((set) => ({
+const useModalStore = create<ModalStoreType>((set) => ({
   isShow: false,
   type: 'idle',
   toggleShow: () => set((state) => ({ isShow: !state.isShow })),
   setType: (value: ModalType) => set(() => ({ type: value })) 
 }))
 
-export default useStore;
+export default useModalStore;

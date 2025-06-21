@@ -22,7 +22,10 @@ export enum ALL_PARAMS {
 }
 export enum ALL_PATHS {
   VACANCIES = '/vacancies',
-  QUESTIONS = '/questions'
+  QUESTIONS = '/questions',
+  CLIENT_AUTH = '/api/login',
+  EXTERNAL_AUTH = '/auth/token',
+  USER_INFO = '/auth/users/me'
 }
 export const SPECIALIZATIONS = [
   {

@@ -1,17 +1,23 @@
+'use client'
+
+import { usePathname } from "next/navigation";
 import { memo } from "react";
 
 type Props = {
   isMain?: boolean;
   isFooter?: boolean;
+  className?: string;
 }
 
-function LogoComponent ({ isMain, isFooter }: Props) {
+function LogoComponent ({ isMain, isFooter, className }: Props) {
+  const pathName = usePathname();
+
   return (
     <span 
       className={`font-wix-display text-xl
-        ${isMain && 'bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-secondary-400)] bg-clip-text text-transparent'}
+        ${isMain && (pathName === '/' ? 'bg-gradient-to-r from-[var(--color-primary-400)] to-[var(--color-secondary-400)] bg-clip-text text-transparent' : 'text-neutral-600')}
         ${isFooter && 'text-neutral-500 md:text-3xl -tracking-[0.5px] md:tracking-normal leading-5 md:leading-7.5'}
-        ${(!isMain && !isFooter) && 'text-neutral-600'}
+        ${className}
       `}
     >
       &lt;

@@ -61,11 +61,10 @@ export type SearchParamsType = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export type PropsPage<T> = {
+export type PropsPage = {
   speciality: string;
   seoTagsList: FilterType[];
-  data: T[];
-  totalPages: number;
+  searchParams: SearchParamsType["searchParams"];
 }
 
 export type ResponceType<T> = {
@@ -73,4 +72,13 @@ export type ResponceType<T> = {
   total: number;
   skip: number;
   limit: number;
+}
+
+export type ResponseAuth = {
+	access_token: string,
+	token_type: "bearer";
+}
+
+export type User = {
+  username: string;
 }
