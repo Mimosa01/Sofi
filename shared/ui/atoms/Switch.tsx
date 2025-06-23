@@ -1,13 +1,17 @@
 type SwitchProps = {
-  checked?: boolean
-}
+  checked?: boolean;
+  onClick?: () => void;
+  label?: string;
+};
 
-export default function Switch({ checked = false }: SwitchProps) {
-
+export default function Switch({ checked = false, onClick, label }: SwitchProps) {
   return (
-    <div
+    <button
       role="switch"
       aria-checked={checked}
+      aria-label={label}
+      onClick={onClick}
+      tabIndex={0}
       className={`relative w-9 h-5.5 border-2 rounded-full transition-colors duration-300 cursor-pointer
         ${checked ? 'border-neutral-800' : 'border-neutral-300'}
       `}
@@ -17,6 +21,6 @@ export default function Switch({ checked = false }: SwitchProps) {
           ${checked ? 'translate-x-3.5 bg-neutral-800' : 'translate-x-0 bg-neutral-300'}
         `}
       />
-    </div>
-  )
+    </button>
+  );
 }

@@ -22,7 +22,7 @@ export default function SidebarCardAds ({ yellow }: Props) {
         className="mb-[15px]"
         style={{ width: '60px', height: '60px' }}
       />
-      <Heading level={4} className={`mb-12.5 text-lg ${yellow ? 'font-semibold' : 'font-medium'} leading-5 -tracking-[0.5px]`}>
+      <Heading level={3} className={`mb-12.5 text-lg ${yellow ? 'font-semibold' : 'font-medium'} leading-5 -tracking-[0.5px]`}>
         Не зовут на интервью? Автоматизируй поиск работы своему AI ассистенту Софи
       </Heading>
       <div className={`flex justify-between items-center ${ yellow ? 'text-[#8E521E]' : 'text-primary-500'}`}>

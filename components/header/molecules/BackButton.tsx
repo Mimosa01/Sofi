@@ -11,8 +11,13 @@ export default function BackButton () {
 
   if (pathname.includes(`${ALL_PATHS.VACANCIES}/`) || pathname.includes(`${ALL_PATHS.QUESTIONS}/`)) {
     return (
-      <Button onClick={() => router.back()} className={`hidden md:block px-6 py-5 text-neutral-600 bg-white rounded-[18px] shadow-header backdrop-blur-sm`}>
+      <Button 
+        onClick={() => router.back()} 
+        aria-hidden="true"
+        className={`hidden md:block px-6 py-5 text-neutral-600 bg-white rounded-[18px] shadow-header backdrop-blur-sm`}
+      >
         <ArrowAdsIcon className="-rotate-135"/>
+        <span className="sr-only">Назад</span>
       </Button>
     )
   } else {

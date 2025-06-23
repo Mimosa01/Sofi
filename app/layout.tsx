@@ -3,8 +3,8 @@ import "./globals.css";
 import { wixMadeforDisplay } from "./fonts";
 import Footer from "@/components/footer/widgets/Footer";
 import Header from "@/components/header/widgets/Header";
-import Modal from "@/components/modal/widgets/Modal";
 import { Toaster } from "sonner";
+import ModalClient from "@/components/modal/widgets/ModalClient";
 
 export const metadata: Metadata = {
   title: "<codereview/> — вакансии, стажировки и карьерные возможности для разработчиков",
@@ -53,7 +53,7 @@ export default function RootLayout({
         <Toaster position="top-right" richColors />
         <Header />
         {children}
-        <Modal />
+        <ModalClient />
         <Footer />
       </body>
     </html>
