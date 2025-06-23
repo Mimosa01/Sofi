@@ -1,7 +1,7 @@
 import { QuestionType, ResponceType, SearchParamsType } from "@/types/constants"
 import CardQuestion from "../organisms/CardQuestion";
 import { Fragment, Suspense } from "react";
-import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
+import AdvertisingCard from "@/components/advertisingCard/widgets/AdvertisingCard";
 import { ALL_PATHS } from "@/lib/constants/contants";
 import { fetcher } from "@/lib/fetch/fetcher";
 import { getQueryPath } from "@/lib/utils/getQueryPath";

@@ -1,4 +1,4 @@
-import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
+import AdvertisingCard from "@/components/advertisingCard/widgets/AdvertisingCard";
 import NextQuestion from "../organisms/NextQuestion";
 
 type Props = {

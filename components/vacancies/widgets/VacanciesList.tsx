@@ -7,7 +7,7 @@ import { toPaginated } from "@/lib/utils/toPaginated";
 import Pagination from "@/components/pagination/widgets/Pagination";
 import ProtectedContent from "../../../shared/ui/organisms/ProtectedContent";
 import { fetcher } from "@/lib/fetch/fetcher";
-import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
+import AdvertisingCard from "@/components/advertisingCard/widgets/AdvertisingCard";
 
 const LIMIT = Number(process.env.NEXT_PUBLIC_API_LIMIT!);
 

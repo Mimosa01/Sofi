@@ -3,7 +3,7 @@ import Logo from '@/shared/ui/atoms/Logo';
 import Link from 'next/link';
 import ProfileButton from '../molecules/ProfileButton';
 import { Suspense } from 'react';
-import AdsButton from '@/components/advertisingCard.tsx/moleculs/AdsButton';
+import AdsButton from '@/components/advertisingCard/moleculs/AdsButton';
 import BackButton from '../molecules/BackButton';
 
 export default function Header () {  

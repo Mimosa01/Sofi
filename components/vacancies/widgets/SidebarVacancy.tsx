@@ -1,7 +1,7 @@
 import { VacancyType } from "@/types/constants";
 import Offer from "../organisms/Offer";
 import Similar from "../organisms/Similar";
-import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
+import AdvertisingCard from "@/components/advertisingCard/widgets/AdvertisingCard";
 
 type Props = {
   item: VacancyType;
