@@ -1,6 +1,5 @@
 import { ResponceType, SearchParamsType, VacancyType } from "@/types/constants"
 import CardVacancy from "../organisms/CardVacancy";
-import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
 import { Fragment, Suspense } from "react";
 import { ALL_PATHS } from "@/lib/constants/contants";
 import { getQueryPath } from "@/lib/utils/getQueryPath";
@@ -8,6 +7,7 @@ import { toPaginated } from "@/lib/utils/toPaginated";
 import Pagination from "@/components/pagination/widgets/Pagination";
 import ProtectedContent from "../../../shared/ui/organisms/ProtectedContent";
 import { fetcher } from "@/lib/fetch/fetcher";
+import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
 
 const LIMIT = Number(process.env.NEXT_PUBLIC_API_LIMIT!);
 
