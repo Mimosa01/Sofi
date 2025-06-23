@@ -1,6 +1,6 @@
 import { ResponceType, SearchParamsType, VacancyType } from "@/types/constants"
 import CardVacancy from "../organisms/CardVacancy";
-import AdvertisingCard from "@/components/AdvertisingCard.tsx/widgets/AdvertisingCard";
+import AdvertisingCard from "@/components/advertisingCard.tsx/widgets/AdvertisingCard";
 import { Fragment, Suspense } from "react";
 import { ALL_PATHS } from "@/lib/constants/contants";
 import { getQueryPath } from "@/lib/utils/getQueryPath";

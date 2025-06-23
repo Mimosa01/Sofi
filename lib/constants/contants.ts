@@ -22,6 +22,7 @@ export enum ALL_PARAMS {
 }
 export enum ALL_PATHS {
   VACANCIES = '/vacancies',
+  VACANCIES_ADD = '/vacancies/add',
   QUESTIONS = '/questions',
   CLIENT_AUTH = '/api/login',
   EXTERNAL_AUTH = '/auth/token',

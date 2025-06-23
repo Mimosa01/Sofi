@@ -9,16 +9,11 @@ type Props = {
   item: QuestionType;
 }
 
-export default function CardQuestion ({ item }: Props) {
+export default function CardQuestionForSidebar ({ item }: Props) {
   return (
     <Link href={`${ALL_PATHS.QUESTIONS}/${item.id}`}>
-      <article className={`p-[15px] bg-neutral-100 rounded-lg group`}> 
-        <Heading 
-          level={3} 
-          className="mb-1 text-neutral-800 text-lg font-semibold leading-6 line-clamp-2 group-hover:text-primary-500 transition-colors duration-300"
-        >
-          { item.question }
-        </Heading>
+      <article className={`bg-neutral-100 rounded-lg`}> 
+        <Heading level={3} className="mb-1 text-neutral-800 text-lg font-medium leading-6 line-clamp-4">{ item.question }</Heading>
         <div className="flex items-center">
           <Text className="text-neutral-600 text-lg font-normal leading-5.5 after:content-['•'] after:mx-2.5 after:text-neutral-400">
             {/* Временно пока не скажут как лучше */}

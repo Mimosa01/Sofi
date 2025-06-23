@@ -4,7 +4,6 @@ import CategorySection from "@/components/categorySection/widgets/CategorySectio
 import HeroSection from "@/components/heroSection/widgets/HeroSection";
 import { useRedirectLogin } from "@/shared/hooks/useRedirectLogin";
 import BackgroundGradient from "@/shared/ui/atoms/BackgroundGradient";
-import { Suspense } from "react";
 
 export default function MainPage () {
   useRedirectLogin();
@@ -15,9 +14,7 @@ export default function MainPage () {
         className="absolute top-0 left-0" 
       />
       <HeroSection />
-      <Suspense>
-        <CategorySection />
-      </Suspense>
+      <CategorySection />
     </main>
   )
 }

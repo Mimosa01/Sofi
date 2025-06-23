@@ -13,7 +13,7 @@ import useAuthStore from "@/lib/store/useAthStore";
 import { toast } from "sonner";
 
 export default function ModalLogin () {
-  const { setType } = useModalStore((state) => state);
+  const { setType, toggleShow } = useModalStore((state) => state);
   const { setUser } = useAuthStore(state => state);
   const { register, onSubmit, formState: { errors } } = useFormValidation<LoginFormType>(
     loginSchema,
@@ -23,7 +23,7 @@ export default function ModalLogin () {
       try {
         await login(username, data.password);
         setUser({username: username});
-        setType("subscribe");
+        toggleShow();
         toast.success("Добро пожаловать!");
       } catch (error) {
         toast.error("Неверный логин или пароль");

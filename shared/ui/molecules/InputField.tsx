@@ -1,3 +1,5 @@
+'use client'
+
 import { forwardRef, ReactNode, useState } from "react";
 import Input from "../atoms/Input";
 import Label from "../atoms/Label";
@@ -12,10 +14,11 @@ type Props = {
   button?: ReactNode;
   disabled?: boolean;
   error?: string;
+  required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const InputField = forwardRef<HTMLInputElement, Props>(
-  ({ htmlFor, fieldName, placeholder, type, button, disabled, error, ...props }, ref) => {
+  ({ htmlFor, fieldName, placeholder, type, button, disabled, error, required, ...props }, ref) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const isPassword = type === "password";
@@ -24,8 +27,17 @@ const InputField = forwardRef<HTMLInputElement, Props>(
     const handleToggle = () => setIsPasswordVisible((prev) => !prev);
 
     return (
-      <Label htmlFor={htmlFor}>
-        <Text className="text-base leading-4.5">{fieldName}</Text>
+      <Label htmlFor={htmlFor} className="w-full">
+        <Text className={`text-base leading-4.5 ${required && 'flex gap-1 items-center'}`}>
+          {fieldName}
+          {required && 
+            <span
+              aria-hidden="true"
+              className="inline-block w-1.5 h-1.5 rounded-full bg-quaternary-400"
+              title="Обязательное поле"
+            />
+          }
+        </Text>
         <div className="relative">
           <Input
             htmlFor={htmlFor}

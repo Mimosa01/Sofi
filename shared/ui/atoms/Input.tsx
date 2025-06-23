@@ -17,13 +17,14 @@ const Input = forwardRef<HTMLInputElement, Props>(
         ref={ref}
         {...props}
         className={`
-          w-full p-[15px] text-lg text-neutral-800 font-normal font-wix-display rounded-xl leading-5.5
+          w-full p-[14px] text-lg text-neutral-800 font-normal font-wix-display rounded-xl leading-5.5
           placeholder:text-neutral-300 placeholder:text-lg placeholder:font-normal placeholder:font-wix-display placeholder:leading-5.5
           border transition-colors duration-300
           ${error 
-            ? "border-quaternary-400 focus:border-quaternary-400" 
-            : "border-neutral-300 focus:border-secondary-500 focus:border-2 hover:border-neutral-400 active:border-secondary-500 active:border-2"}
-          focus:outline-none
+            ? "border-quaternary-400 focus:outline-quaternary-400" 
+            : "border-neutral-300 focus:outline-2 focus:outline-secondary-500 hover:border-neutral-400 active:outline-secondary-500 active:outline-2"
+          }
+          -outline-offset-1
           disabled:bg-neutral-100 disabled:cursor-not-allowed
 
           ${className}

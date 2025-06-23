@@ -4,24 +4,29 @@ type FetcherOptions = {
   revalidate?: number | false;
 };
 
+type ExtendedRequestInit = RequestInit & {
+  next?: { revalidate?: number | false };
+};
+
 export async function fetcher<T = unknown>(
   endpoint: string,
   init?: RequestInit,
   options?: FetcherOptions
 ): Promise<T> {
-
-  const fetchOptions: RequestInit = {
+  const fetchOptions: ExtendedRequestInit = {
     method: init?.method || 'GET',
     ...init,
-    ...(init?.method === 'GET' && options?.revalidate !== undefined
-      ? { next: { revalidate: options.revalidate } }
-      : {}),
   };
+
+  if (fetchOptions.method === 'GET' && options?.revalidate !== undefined) {
+    fetchOptions.next = { revalidate: options.revalidate };
+  }
 
   const res = await fetch(`${API_URL}${endpoint}`, fetchOptions);
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch: ${res.statusText}`);
+    const errorData = await res.json().catch(() => null);
+    throw new Error(errorData?.message || res.statusText);
   }
 
   return res.json();
