@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sofi — вакансии и стажировки для разработчиков
 
-## Getting Started
+Веб-приложение на Next.js 15 для размещения вакансий, прохождения интервью и карьерного роста.
 
-First, run the development server:
+## 🚀 Быстрый старт
 
 ```bash
+git clone https://github.com/Mimosa01/Sofi.git
+cd Sofi
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+````
+
+Создай `.env.local`:
+
+```
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+NEXT_PUBLIC_ADS_URL=ссылка на рекламу
+
+NEXT_PUBLIC_API_LIMIT=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧱 Технологии
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Next.js 15 (App Router)**
+* **React Server/Client Components**
+* **Zod + React Hook Form** — валидация форм
+* **Middleware** — защита маршрутов
+* **Dynamic Imports** — оптимизация JS
+* **Atomic Design** — структура UI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Структура
 
-## Learn More
+* `app/` — страницы и маршруты
+* `components/` — UI-компоненты
+* `hooks/` — кастомные хуки
+* `lib/` — утилиты, схемы, типы
+* `shared/` — стили, иконки
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Команды
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev       # запуск разработки
+npm run build     # production-сборка
+npm run lint      # проверка ESLint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛡 Доступность
 
-## Deploy on Vercel
+Компоненты снабжены `role`, `aria-*`, `aria-label`, `alt` — без ошибок в Pagespeed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Лицензия
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT © [Mimosa01](https://github.com/Mimosa01)
